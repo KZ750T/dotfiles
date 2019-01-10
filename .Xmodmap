@@ -16,8 +16,6 @@ keysym h = h H Left
 keysym k = k K Up
 
 
-
-
 ! Run this to activate
 ! xmodmap ~/.Xmodmap
 
