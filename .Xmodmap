@@ -1,0 +1,25 @@
+! Unmap capslock
+remove Lock = Caps_Lock
+keycode 66 = Hyper_L
+
+! Leave mod4 as windows key _only_
+remove mod4 = Hyper_L
+
+! Set mod3 to capslock
+add mod3 = Hyper_L
+
+
+keycode 66 = Mode_switch
+keysym j = j J Down 
+keysym l = l L Right
+keysym h = h H Left
+keysym k = k K Up
+
+
+
+
+! Run this to activate
+! xmodmap ~/.Xmodmap
+
+! If something goes wrong, you can reset your keyboard with:
+! setxkbmap -layout us
