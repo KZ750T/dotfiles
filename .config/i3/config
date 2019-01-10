@@ -1,0 +1,410 @@
+#############################################################
+#####		 SET VARIABLES				#####
+#############################################################
+set $dark0_hard       #1d2021
+set $dark0            #282828
+set $dark0_soft       #32302f
+set $dark1            #3c3836
+set $dark2            #504945
+set $dark3            #665c54
+set $dark4            #7c6f64
+set $gray_245         #928374
+set $gray_244         #928374
+set $light0_hard      #f9f5d7
+set $light0           #fbf1c7
+set $light0_soft      #f2e5bc
+set $light1           #ebdbb2
+set $light2           #d5c4a1
+set $light3           #bdae93
+set $light4           #a89984
+set $bright_red       #fb4934
+set $bright_green     #b8bb26
+set $bright_yellow    #fabd2f
+set $bright_blue      #83a598
+set $bright_purple    #d3869b
+set $bright_aqua      #8ec07c
+set $bright_orange    #fe8019
+set $neutral_red      #cc241d
+set $neutral_green    #98971a
+set $neutral_yellow   #d79921
+set $neutral_blue     #458588
+set $neutral_purple   #b16286
+set $neutral_aqua     #689d6a
+set $neutral_orange   #d65d0e
+set $faded_red        #9d0006
+set $faded_green      #79740e
+set $faded_yellow     #b57614
+set $faded_blue       #076678
+set $faded_purple     #8f3f71
+set $faded_aqua       #427b58
+set $faded_orange     #af3a03
+set $neon_blue	      #268BD2
+set $mod Mod1
+set $sup Mod4
+set $hyp Mode_switch
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:FontAwesome 10
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+#############################################################
+#####		 Mouse+$Mod to Drag Floating Windows	#####
+#############################################################
+floating_modifier $mod
+
+#############################################################
+#####		 Terminal				#####
+#############################################################
+#bindsym $mod+Return exec --no-startup-id xfce4-terminal
+#bindsym $mod+Return exec --no-startup-id lxterminal
+bindsym $mod+Return exec --no-startup-id termite
+
+#############################################################
+#####		 Kill Focused Window			#####
+#############################################################
+bindsym $mod+Shift+q kill
+
+#############################################################
+#####		 Program Launcher 			#####
+#############################################################
+bindsym $mod+d exec --no-startup-id rofi -show drun -font "Droid Sans Mono 12" 
+
+#############################################################
+#####		 Window Management 			#####
+#############################################################
+	#####	 Change Focus	#####
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+	#####	 Move Focused Window    #####
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+	
+	#####	Split Horizontal	#####
+bindsym $mod+semicolon split h
+
+	#####	Split Vertical		#####
+bindsym $mod+v split v
+
+	#####	Toggle Fullscreen	#####
+bindsym $mod+f fullscreen toggle
+
+	#####	Change Layout		#####
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+	#####	Toggle Tiling / Floating	#####
+bindsym $mod+Shift+space floating toggle
+
+	#####	Toggle Focus Tilingi / Floating	#####
+bindsym $mod+space focus mode_toggle
+
+	#####	Focus Rarent Container		#####
+bindsym $mod+a focus parent
+
+	#####	Focus Child Container		#####
+#bindsym $mod+d focus child
+
+#############################################################
+#####		Resize Windows 				#####
+#############################################################
+bindsym $mod+Shift+y		exec --no-startup-id i3resize left
+bindsym $mod+Shift+u		exec --no-startup-id i3resize down
+bindsym $mod+Shift+i		exec --no-startup-id i3resize up
+bindsym $mod+Shift+o		exec --no-startup-id i3resize right
+
+#############################################################
+#####		 Workspace Management			#####
+#############################################################
+
+	#####	Set Workspace Variable	#####	
+#set $workspace1 "1:"
+#set $workspace2 "2: "
+#set $workspace3 "3:"
+#set $workspace4 "4: "
+#set $workspace5 "5: "
+#set $workspace6 "6:"
+#set $workspace10 "10:"
+
+	#####	Switch To Workspace	#####
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+	#####	Move Focused Container	#####	
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+#############################################################
+#####		 Config File				#####
+#############################################################
+	#####	Reload Configuration File	#####
+bindsym $mod+Shift+c reload
+	
+	#####	Restart i3 Inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+	
+	#####	Exit i3		#####
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+#mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        #bindsym j resize shrink width 10 px or 10 ppt
+        #bindsym k resize grow height 10 px or 10 ppt
+        #bindsym l resize shrink height 10 px or 10 ppt
+        #bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        #bindsym Left resize shrink width 10 px or 10 ppt
+        #bindsym Down resize grow height 10 px or 10 ppt
+        #bindsym Up resize shrink height 10 px or 10 ppt
+        #bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        #bindsym Return mode "default"
+        #bindsym Escape mode "default"
+#}
+
+#bindsym $mod+r mode "resize"
+
+
+
+
+#                       border              background         text                 indicator
+client.focused          $dark0_soft         $neon_blue         $dark0_soft          $dark2
+client.unfocused        $dark0              $dark0             $dark0               $dark2
+client.focused_inactive $dark0              $dark0             $dark0               $dark2
+client.urgent           $neutral_orange     $neutral_orange    $neutral_orange      $dark2
+
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	font pango:Droid Sans Mono, FontAwesome 10
+#	position top
+#	colors {
+#		background $bg-color
+#	    	separator #757575
+#		#                  border             background         text
+#		focused_workspace  $bg-color          $bg-color          $text-color
+#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#	}
+#
+#}
+
+
+#############################################################
+#####		 Polybar				#####
+#############################################################
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+bindsym $hyp+shift+x exec --no-startup-id kill_poly
+
+#############################################################
+#####		 Border Control				#####
+#############################################################
+hide_edge_borders both
+bindsym $mod+shift+b exec i3-msg border toggle
+for_window [class="^.*"] border pixel 1
+
+#############################################################
+#####		 Toggle Bar Dock/Hide			#####
+#############################################################
+bindsym $mod+n bar mode toggle
+
+#############################################################
+#####		 Polkit					#####
+#############################################################
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+#############################################################
+#####		 Set Floating 				#####
+#############################################################
+for_window [class="mpv" instance="gl"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pamac-updater"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="sxiv"] floating enable
+for_window [class="Sxiv"] floating enable
+for_window [class="Gimp"] floating enable
+for_window [class="Gimp-2.8p"] floating enable
+for_window [class="Gpicview"] floating enable
+
+#############################################################
+#####		 Scratchpad				#####
+#############################################################
+#exec_always --no-startup-id termite -t scratch
+exec --no-startup-id termite -t scratch
+bindsym $sup+Return [title="scratch"] scratchpad show; [title="scratch"] move position center
+for_window[title="scratch"] floating enable 
+for_window[title="scratch"] move scratchpad
+
+#exec_always --no-startup-id termite -t drop
+exec --no-startup-id termite -t drop
+bindsym $hyp+space [title="drop"] scratchpad show; [title="drop"] move position center
+for_window[title="drop"] floating enable 
+for_window[title="drop"] move scratchpad 
+
+#exec_always --no-startup-id termite -t castero
+exec --no-startup-id termite -t castero
+bindsym $sup+space [title="castero"] scratchpad show; [title="castero"] move position center
+for_window[title="castero"] floating enable 
+for_window[title="castero"] move scratchpad 
+
+
+#############################################################
+#####		 Screen Lock				#####
+#############################################################
+bindsym $mod+shift+z exec --no-startup-id blurlock
+
+#############################################################
+#####		 Screenshot				#####
+#############################################################
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots'
+
+#############################################################
+#####		 Pulse Audio 				#####
+#############################################################
+		##### Pactl #####
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume #
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume #
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound		      #
+		##### Pamixer #####
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5 #increase sound volume
+bindsym $hyp+1 exec --no-startup-id pamixer --increase 5 #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 5 #decrease sound volume
+bindsym $hyp+2 exec --no-startup-id pamixer --decrease 5 #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pamixer -t # mute sound
+bindsym $hyp+3 exec --no-startup-id pamixer -t # mute sound
+
+#############################################################
+#####		 System Brightness			#####
+#############################################################
+bindsym $sup+shift+k exec xbacklight -inc 5  # increase screen brightness
+bindsym $sup+shift+j exec xbacklight -dec 10 # decrease screen brightness
+
+#############################################################
+#####		 Media Keys				#####
+#############################################################
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+#############################################################
+#####		 Set Wallpaper 				#####
+#############################################################
+		##### Normal #####
+#exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/rtfm-demo-1366x768.png
+		##### Random #####
+exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/Wallpaper
+
+#############################################################
+#####		 Compositor				#####
+#############################################################
+exec --no-startup-id compton -f 
+
+#############################################################
+#####		 Set Keyboard Layout			#####
+#############################################################
+exec --no-startup-id setxkbmap -layout us && xmodmap ~/.Xmodmap2
+bindsym $mod+shift+x exec --no-startup-id xmodmap ~/.Xmodmap2
+
+#############################################################
+#####		 Pamac Tray Icon			#####
+#############################################################
+exec_always --no-startup-id pamac-tray
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id blueman-applet
+
+#############################################################
+#####		Assign Program to Workspace		#####
+#############################################################
+assign [class="Firefox"] 1
+assign [class="Chromium"] 3
+assign [class="Steam"] 4
+#############################################################
+#####		Spotify "Fix"				#####
+#############################################################
+for_window [class="Spotify"] move to workspace 10
+
+#############################################################
+#####		Program Shortcuts			#####
+#############################################################
+bindsym $mod+c exec --no-startup-id chromium
+#bindsym $hyp+q exec --no-startup-id firejail --seccomp qutebrowser 
+bindsym $hyp+q exec --no-startup-id qutebrowser 
+bindsym $mod+shift+v exec --no-startup-id opera
+bindsym $mod+shift+f exec --no-startup-id firejail --seccomp firefox
+bindsym $mod+shift+t exec --no-startup-id readtome
+bindsym $hyp+t exec --no-startup-id thunar
+
+#############################################################
+#####		Gaps					#####
+#############################################################
+gaps inner 10
+gaps outer 3
+smart_gaps on
+
+#############################################################
+#####		External Monitor			#####
+#############################################################
+workspace 8 output HDMI1
+workspace 9 output HDMI1 
+
+#############################################################
+#####		Power Manager				#####
+#############################################################
+exec --no-startup-id xfce4-power-manager
+
+#############################################################
+#####		KDE Connect				#####
+#############################################################
+exec --no-startup-id /usr/lib/kdeconnectd 
+exec --no-startup-id kdeconnect-indicator
+
+#############################################################
+#####		 Razer Mouse				#####
+#############################################################
+exec --no-startup-id polychromatic-tray-applet
