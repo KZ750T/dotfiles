@@ -5,8 +5,8 @@ chmod +x /home/user/.dotfiles/.scripts/*
 ln -sf /home/user/.dotfiles/.zimrc ~/.zimrc
 ln -sf /home/user/.dotfiles/.zshrc ~/.zshrc
 ln -sf /home/user/.dotfiles/.mailcap ~/.mailcap
-ln -sf /home/user/.dotfiles/.config/.Xmodmap ~/.Xmodmap
-ln -sf /home/user/.dotfiles/.config/.Xmodmap2 ~/.Xmodmap2
+ln -sf /home/user/.dotfiles/.Xmodmap ~/.Xmodmap
+ln -sf /home/user/.dotfiles/.Xmodmap2 ~/.Xmodmap2
 ln -sf /home/user/.dotfiles/.config/castero/castero.conf ~/.config/castero/
 ln -sf /home/user/.dotfiles/.config/castero/feeds ~/.local/share/castero/
 ln -sf /home/user/.dotfiles/.config/i3/* ~/.config/i3/
