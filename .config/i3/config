@@ -1,47 +1,49 @@
 #############################################################
 #####		 SET VARIABLES				#####
 #############################################################
-set $dark0_hard       #1d2021
-set $dark0            #282828
-set $dark0_soft       #32302f
-set $dark1            #3c3836
-set $dark2            #504945
-set $dark3            #665c54
-set $dark4            #7c6f64
-set $gray_245         #928374
-set $gray_244         #928374
-set $light0_hard      #f9f5d7
-set $light0           #fbf1c7
-set $light0_soft      #f2e5bc
-set $light1           #ebdbb2
-set $light2           #d5c4a1
-set $light3           #bdae93
-set $light4           #a89984
-set $bright_red       #fb4934
-set $bright_green     #b8bb26
-set $bright_yellow    #fabd2f
-set $bright_blue      #83a598
-set $bright_purple    #d3869b
-set $bright_aqua      #8ec07c
-set $bright_orange    #fe8019
-set $neutral_red      #cc241d
-set $neutral_green    #98971a
-set $neutral_yellow   #d79921
-set $neutral_blue     #458588
-set $neutral_purple   #b16286
-set $neutral_aqua     #689d6a
-set $neutral_orange   #d65d0e
-set $faded_red        #9d0006
-set $faded_green      #79740e
-set $faded_yellow     #b57614
-set $faded_blue       #076678
-set $faded_purple     #8f3f71
-set $faded_aqua       #427b58
-set $faded_orange     #af3a03
-set $neon_blue	      #268BD2
+#set $dark0_hard       #1d2021
+#set $dark0            #282828
+#set $dark0_soft       #32302f
+#set $dark1            #3c3836
+#set $dark2            #504945
+#set $dark3            #665c54
+#set $dark4            #7c6f64
+#set $gray_245         #928374
+#set $gray_244         #928374
+#set $light0_hard      #f9f5d7
+#set $light0           #fbf1c7
+#set $light0_soft      #f2e5bc
+#set $light1           #ebdbb2
+#set $light2           #d5c4a1
+#set $light3           #bdae93
+#set $light4           #a89984
+#set $bright_red       #fb4934
+#set $bright_green     #b8bb26
+#set $bright_yellow    #fabd2f
+#set $bright_blue      #83a598
+#set $bright_purple    #d3869b
+#set $bright_aqua      #8ec07c
+#set $bright_orange    #fe8019
+#set $neutral_red      #cc241d
+#set $neutral_green    #98971a
+#set $neutral_yellow   #d79921
+#set $neutral_blue     #458588
+#set $neutral_purple   #b16286
+#set $neutral_aqua     #689d6a
+#set $neutral_orange   #d65d0e
+#set $faded_red        #9d0006
+#set $faded_green      #79740e
+#set $faded_yellow     #b57614
+#set $faded_blue       #076678
+#set $faded_purple     #8f3f71
+#set $faded_aqua       #427b58
+#set $faded_orange     #af3a03
+#set $neon_blue	      #268BD2
 set $mod Mod1
 set $sup Mod4
 set $hyp Mode_switch
+
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -125,10 +127,10 @@ bindsym $mod+a focus parent
 #############################################################
 #####		Resize Windows 				#####
 #############################################################
-bindsym $mod+Shift+y		exec --no-startup-id i3resize left
-bindsym $mod+Shift+u		exec --no-startup-id i3resize down
-bindsym $mod+Shift+i		exec --no-startup-id i3resize up
-bindsym $mod+Shift+o		exec --no-startup-id i3resize right
+bindsym $mod+Shift+y		exec --no-startup-id ~/.scripts/i3resize left
+bindsym $mod+Shift+u		exec --no-startup-id ~/.scripts/i3resize down
+bindsym $mod+Shift+i		exec --no-startup-id ~/.scripts/i3resize up
+bindsym $mod+Shift+o		exec --no-startup-id ~/.scripts/i3resize right
 
 #############################################################
 #####		 Workspace Management			#####
@@ -209,10 +211,37 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 #                       border              background         text                 indicator
-client.focused          $dark0_soft         $neon_blue         $dark0_soft          $dark2
-client.unfocused        $dark0              $dark0             $dark0               $dark2
-client.focused_inactive $dark0              $dark0             $dark0               $dark2
-client.urgent           $neutral_orange     $neutral_orange    $neutral_orange      $dark2
+#client.focused          $dark0_soft         $neon_blue         $dark0_soft          $dark2
+#client.unfocused        $dark0              $dark0             $dark0               $dark2
+#client.focused_inactive $dark0              $dark0             $dark0               $dark2
+#client.urgent           $neutral_orange     $neutral_orange    $neutral_orange      $dark2
+
+
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $pri i3wm.color1 #f0f0f0
+set_from_resource $bga i3wm.color0 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+#client.focused          $pri    $bg     $fg  $pri      $pri
+client.focused		$bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bga
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+
+
+
+
+
 
 
 
@@ -307,9 +336,9 @@ bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots'
 #####		 Pulse Audio 				#####
 #############################################################
 		##### Pactl #####
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume #
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume #
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound		      #
+#bindsym $hyp+1 exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume #
+#bindsym $hyp+2 exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume #
+#bindsym $hyp+3 exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound		      #
 		##### Pamixer #####
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5 #increase sound volume
 bindsym $hyp+1 exec --no-startup-id pamixer --increase 5 #increase sound volume
@@ -338,8 +367,10 @@ bindsym XF86AudioPrev exec playerctl previous
 		##### Normal #####
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/rtfm-demo-1366x768.png
 		##### Random #####
-exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/Wallpaper
+#exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/Wallpaper
 
+#exec --no-startup-id wal --theme base16-mellow-purple -g
+exec --no-startup-id wal -i Pictures/Wallpaper/wallhaven-490733.jpg -o .scripts/qutebrowser_reload.py -g
 #############################################################
 #####		 Compositor				#####
 #############################################################
@@ -348,9 +379,10 @@ exec --no-startup-id compton -f
 #############################################################
 #####		 Set Keyboard Layout			#####
 #############################################################
-exec --no-startup-id setxkbmap -layout us && xmodmap ~/.Xmodmap2
-bindsym $mod+shift+x exec --no-startup-id xmodmap ~/.Xmodmap2
-
+#exec --no-startup-id setxkbmap -layout us && xmodmap ~/.Xmodmap2
+#bindsym $mod+shift+x exec --no-startup-id xmodmap ~/.Xmodmap2
+exec --no-startup-id xkbcomp ~/.RK61-xkb-keymap :0
+bindsym $mod+shift+x exec --no-startup-id xkbcomp ~/.RK61-xkb-keymap :0
 #############################################################
 #####		 Pamac Tray Icon			#####
 #############################################################
@@ -408,3 +440,8 @@ exec --no-startup-id kdeconnect-indicator
 #####		 Razer Mouse				#####
 #############################################################
 exec --no-startup-id polychromatic-tray-applet
+#############################################################
+#####		 Dmenu mount/umount				#####
+#############################################################
+bindsym $mod+F9		exec --no-startup-id dmenumount
+bindsym $mod+F10	exec --no-startup-id dmenuumount

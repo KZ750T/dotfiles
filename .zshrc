@@ -83,7 +83,7 @@ alias tsm-remove='transmission-remote -t --remove'
 alias tsm-info='transmission-remote -t --info'
 alias GoT='fortune GoT | cowsay -f dragon-and-cow | lolcat'
 alias trans='tremc'
-
+alias news='cd ~/Videos/Youtube && newsboat'
 # capture fullscreen using pulse
 alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f alsa -ac 2 -i pulse -acodec opus -strict experimental screen_cast.mkv"
 
@@ -91,3 +91,7 @@ alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.
 function ytaudio() {
     mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch:"$@"
 }
+
+# Pywal Colors 
+(cat ~/.cache/wal/sequences &)
+

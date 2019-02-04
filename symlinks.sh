@@ -10,10 +10,12 @@ ln -sf /home/user/.dotfiles/.Xmodmap2 ~/.Xmodmap2
 ln -sf /home/user/.dotfiles/.config/castero/castero.conf ~/.config/castero/
 ln -sf /home/user/.dotfiles/.config/castero/feeds ~/.local/share/castero/
 ln -sf /home/user/.dotfiles/.config/i3/* ~/.config/i3/
+ln -sf /home/user/.dotfiles/.config/newsboat/* ~/.config/newsboat/
 ln -sf /home/user/.dotfiles/.config/polybar/* ~/.config/polybar/
 ln -sf /home/user/.dotfiles/.config/termite/* ~/.config/termite/
 ln -sf /home/user/.dotfiles/.config/qutebrowser/config.py ~/.config/qutebrowser/
 ln -sf /home/user/.dotfiles/.config/qutebrowser/quickmarks ~/.config/qutebrowser/
+ln -sf /home/user/.dotfiles/.config/mimeapps.list ~/.config/mimeapps.list
 mkdir ~/.config/qutebrowser/bookmarks/ && ln -sf /home/user/.dotfiles/.config/qutebrowser/bookmarks/* ~/.config/qutebrowser/bookmarks/
 mkdir ~/.config/surfraw/elvi && ln -sf /home/user/.dotfiles/.config/surfraw/elvi/* ~/.config/surfraw/elvi/
 ln -sf /home/user/.dotfiles/config/surfraw/conf/ ~/.config/surfraw/

@@ -1,0 +1,18 @@
+[Added Associations]
+text/plain=mousepad.desktop;
+video/x-matroska=mpv.desktop;org.xfce.Parole.desktop;
+text/x-matlab=mousepad.desktop;
+video/mp4=mpv.desktop;vlc.desktop;
+video/mpeg=mpv.desktop;
+image/png=ristretto.desktop;qutebrowser.desktop;
+video/webm=mpv.desktop;
+text/html=qutebrowser.desktop;firefox.desktop;
+text/css=mousepad.desktop;
+image/jpeg=ristretto.desktop;qutebrowser.desktop;
+x-scheme-handler/magnet=transmission-gtk.desktop;transmission-remote.desktop;
+application/x-mimearchive=qutebrowser.desktop;
+application/x-ms-dos-executable=wine.desktop;
+application/x-shellscript=gvim.desktop;
+
+[Default Applications]
+x-scheme-handler/magnet=transmission-remote.desktop

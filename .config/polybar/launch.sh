@@ -11,3 +11,4 @@ polybar main &
 
 
 echo "Bars launched..."
+
